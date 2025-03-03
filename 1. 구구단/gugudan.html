@@ -10,12 +10,11 @@
   <body>
     <div id="root">
       <div>{{firstNum}}곱하기 {{secondNum}}는 ?</div>
-      <form>
-        <input type="number" v-model="answer" />
-        <button>입력</button>
-        <div>{{answer}}</div>
+      <form v-on:submit="onSubmitForm">
+        <input type="number" v-model="answer" ref="answer" />
+        <button type="submit">입력</button>
       </form>
-      <div id="result"></div>
+      <div id="result">{{result}}</div>
     </div>
   </body>
 
@@ -28,7 +27,22 @@
         answer: "",
         result: "",
       },
-      methods: "",
+      methods: {
+        onSubmitForm(e) {
+          e.preventDefault();
+          if (this.firstNum * this.secondNum === parseInt(this.answer)) {
+            this.result = "정답";
+            this.firstNum = Math.ceil(Math.random() * 9);
+            this.secondNum = Math.ceil(Math.random() * 9);
+            this.answer = "";
+            this.$reps.answer.focus();
+          } else {
+            this.result = "오답";
+            this.answer = "";
+            this.$reps.answer.focus();
+          }
+        },
+      },
     });
   </script>
 </html>
