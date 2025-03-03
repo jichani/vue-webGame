@@ -8,12 +8,27 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div>{{firstNum}}곱하기 {{secondNum}}는 ?</div>
+      <form>
+        <input type="number" v-model="answer" />
+        <button>입력</button>
+        <div>{{answer}}</div>
+      </form>
+      <div id="result"></div>
+    </div>
   </body>
 
   <script>
     const app = new Vue({
       el: "#root",
+      data: {
+        firstNum: Math.ceil(Math.random() * 9),
+        secondNum: Math.ceil(Math.random() * 9),
+        answer: "",
+        result: "",
+      },
+      methods: "",
     });
   </script>
 </html>
