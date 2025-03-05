@@ -21,7 +21,7 @@ module.exports = {
   },
   plugins: [new VueLoaderPlugin()],
   output: {
-    filename: "app.js",
+    filename: "[name].js",
     path: path.join(__dirname, "dist"),
   },
 };
