@@ -75,7 +75,7 @@ export default {
       clearTimeout(t);
     });
   },
-  watch: {},
+  watch: {}, // 왠만하면 watch 는 안쓰는 편이 좋다. 워치는 특정 동작을 수행한다.
 };
 </script>
 

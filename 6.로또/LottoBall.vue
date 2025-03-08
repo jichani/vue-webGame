@@ -9,6 +9,7 @@ export default {
     number: Number,
   },
   computed: {
+    // 컴퓨티드는 새로운 값을 리턴한다.
     styleObject() {
       let background;
       if (this.number <= 10) {
