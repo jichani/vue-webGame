@@ -1,4 +1,4 @@
 import { createApp } from "vue";
-import LottoGenerator from "./LottoGenerator";
+import TicTacToe from "./TicTacToe.vue";
 
-createApp(LottoGenerator).mount("#root");
+createApp(TicTacToe).mount("#root");
